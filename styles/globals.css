@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.icon {
+		@apply hidden md:inline-flex p-2 w-10 h-10 cursor-pointer mx-1 hover:opacity-70 text-gray-600 rounded-full bg-gray-100;
+	}
+
+	.inputBoxDiv {
+		@apply flex flex-1 items-center hover:bg-gray-200 rounded-md p-1 cursor-pointer justify-center;
+	}
+
+	.inputBoxIcon {
+		@apply md:h-7 h-6;
+	}
+
+	.inputBoxText {
+		@apply pl-1 text-xs sm:text-sm xl:text-base;
+	}
+}
