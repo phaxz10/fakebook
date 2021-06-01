@@ -1,9 +1,16 @@
 import { getProviders, getSession, signIn } from 'next-auth/client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from '../components/Signin.module.css';
 import Image from 'next/image';
 
 export default function SignIn({ providers }) {
+  let redirectUrl = 'http://location:3000';
+
+  useEffect(() => {
+    const url = new URL(location.href);
+    redirectUrl = url.searchParams.get('callbackUrl');
+  });
+
   return (
     <div className={styles.container}>
       <div className={styles.img}>
@@ -16,7 +23,10 @@ export default function SignIn({ providers }) {
       </div>
       {Object.values(providers).map((provider) => (
         <div key={provider.name}>
-          <button className={styles.button} onClick={() => signIn(provider.id)}>
+          <button
+            className={styles.button}
+            onClick={() => signIn(provider.id, { callbackUrl: redirectUrl })}
+          >
             Sign in with {provider.name}
           </button>
         </div>
