@@ -4,10 +4,20 @@
   background-color: #3b5998;
   border-radius: 9px;
   text-align: center;
+  outline: none;
 }
 
 .button:hover {
   background-color: #455f97;
+}
+
+.button:active {
+  outline: none;
+  background-color: #32446b;
+}
+
+.button:focus {
+  outline: none;
 }
 
 .img {
