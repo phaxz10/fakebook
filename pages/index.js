@@ -8,7 +8,7 @@ import Chat from '../components/Chat';
 import { PencilAltIcon } from '@heroicons/react/solid';
 import { useState } from 'react';
 import { db } from '../firebase';
-// import Login from '../components/Login';
+import Login from '../components/Login';
 
 export default function Home({ session, chatMessages }) {
   const [chatWindow, setChatWIndow] = useState(false);
@@ -17,8 +17,8 @@ export default function Home({ session, chatMessages }) {
   };
 
   if (!session) {
-    // return <Login />;
-    signIn();
+    return <Login />;
+    // signIn();
 
     return <></>;
   }

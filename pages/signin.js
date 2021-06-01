@@ -4,12 +4,14 @@ import styles from '../components/Signin.module.css';
 import Image from 'next/image';
 
 export default function SignIn({ providers }) {
-  let redirectUrl = 'http://location:3000';
+  let redirectUrl = 'https://location:3000';
 
   useEffect(() => {
     const url = new URL(location.href);
     redirectUrl = url.searchParams.get('callbackUrl');
   });
+
+  console.log(redirectUrl);
 
   return (
     <div className={styles.container}>
