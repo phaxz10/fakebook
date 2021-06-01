@@ -16,7 +16,7 @@ import {
 function Sidebar() {
   const [session, loading] = useSession(useSession);
   return (
-    <div className='max-w-[600px] md:min-w-[250px]'>
+    <div className='max-w-[600px] md:min-w-[250px] hidden sm:inline'>
       <SidebarRow title={session.user.name} src={session.user.image} />
       <SidebarRow Icon={UsersIcon} title='Friends' />
       <SidebarRow title='Groups' Icon={UserGroupIcon} />
